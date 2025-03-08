@@ -32,8 +32,8 @@ public class AddressService {
         address.setCity(addressDto.getCity());
         address.setStreet(addressDto.getStreet());
         address.setState(addressDto.getState());
-        address.setZip(address.getZip());
-        address.setCreated_date(address.getCreated_date());
+        address.setZip(addressDto.getZip());
+        address.setCreated_date(addressDto.getCreated_date());
         addressRepository.save(address);
         return new Result(true,"Saqlandi");
     }
@@ -47,8 +47,8 @@ public class AddressService {
             address.setCity(addressDto.getCity());
             address.setStreet(addressDto.getStreet());
             address.setState(addressDto.getState());
-            address.setZip(address.getZip());
-            address.setCreated_date(address.getCreated_date());
+            address.setZip(addressDto.getZip());
+            address.setCreated_date(addressDto.getCreated_date());
             addressRepository.save(address);
             return new Result(true,"O'zgartirildi");
         }

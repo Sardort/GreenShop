@@ -29,7 +29,7 @@ public class CategoryService {
     public Result create(CategoryDto categoryDto){
         Category category = new Category();
         category.setName(categoryDto.getName());
-        category.setDesc(categoryDto.getDesc());
+        category.setDescription(categoryDto.getDescription());
         category.setCount(categoryDto.getCount());
         category.setCreated_date(categoryDto.getCreated_date());
         categoryRepository.save(category);
@@ -42,7 +42,7 @@ public class CategoryService {
         if (categoryOptional.isPresent()){
             Category category = categoryOptional.get();
             category.setName(categoryDto.getName());
-            category.setDesc(categoryDto.getDesc());
+            category.setDescription(categoryDto.getDescription());
             category.setCount(categoryDto.getCount());
             category.setCreated_date(categoryDto.getCreated_date());
             categoryRepository.save(category);

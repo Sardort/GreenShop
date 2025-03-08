@@ -32,8 +32,7 @@ public class ProductService {
         Product product = new Product();
         product.setName(productDto.getName());
         product.setPrice(productDto.getPrice());
-        product.setDesc(productDto.getDesc());
-        product.setSize(String.valueOf(SizeRole.S));
+        product.setDescription(productDto.getDescription());
         product.setSku(productDto.getSku());
         product.setTags(productDto.getTags());
         product.setReviews(productDto.getReviews());
@@ -50,8 +49,7 @@ public class ProductService {
             Product product = productOptional.get();
             product.setName(productDto.getName());
             product.setPrice(productDto.getPrice());
-            product.setDesc(productDto.getDesc());
-            product.setSize(String.valueOf(SizeRole.S));
+            product.setDescription(productDto.getDescription());
             product.setSku(productDto.getSku());
             product.setTags(productDto.getTags());
             product.setReviews(productDto.getReviews());
