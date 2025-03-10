@@ -4,10 +4,11 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+import java.time.LocalDateTime;
+
+
 @Entity
 public class Category {
 
@@ -20,68 +21,68 @@ public class Category {
     private String description;
     @Column(nullable = false)
     private String count;
-    @Column(nullable = false)
-    private String created_date;
+    @CreatedDate
+    private LocalDateTime created_date=LocalDateTime.now();
 
-//    public Category(Integer id, String name, String desc, String count, String created_date) {
-//        this.id = id;
-//        this.name = name;
-//        this.desc = desc;
-//        this.count = count;
-//        this.created_date = created_date;
-//    }
-//
-//    public Category() {
-//    }
-//
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getDesc() {
-//        return desc;
-//    }
-//
-//    public void setDesc(String desc) {
-//        this.desc = desc;
-//    }
-//
-//    public String getCount() {
-//        return count;
-//    }
-//
-//    public void setCount(String count) {
-//        this.count = count;
-//    }
-//
-//    public String getCreated_date() {
-//        return created_date;
-//    }
-//
-//    public void setCreated_date(String created_date) {
-//        this.created_date = created_date;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Category{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", desc='" + desc + '\'' +
-//                ", count='" + count + '\'' +
-//                ", created_date='" + created_date + '\'' +
-//                '}';
-//    }
+    public Category(Integer id, String name, String description, String count, LocalDateTime created_date) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.count = count;
+        this.created_date = created_date;
+    }
+
+    public Category() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
+    }
+
+    public LocalDateTime getCreated_date() {
+        return created_date;
+    }
+
+    public void setCreated_date(LocalDateTime created_date) {
+        this.created_date = created_date;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", count='" + count + '\'' +
+                ", created_date=" + created_date +
+                '}';
+    }
 }

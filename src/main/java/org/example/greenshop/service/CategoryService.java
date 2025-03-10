@@ -31,7 +31,6 @@ public class CategoryService {
         category.setName(categoryDto.getName());
         category.setDescription(categoryDto.getDescription());
         category.setCount(categoryDto.getCount());
-        category.setCreated_date(categoryDto.getCreated_date());
         categoryRepository.save(category);
         return new Result(true,"Saqlandi");
     }
@@ -44,7 +43,6 @@ public class CategoryService {
             category.setName(categoryDto.getName());
             category.setDescription(categoryDto.getDescription());
             category.setCount(categoryDto.getCount());
-            category.setCreated_date(categoryDto.getCreated_date());
             categoryRepository.save(category);
             return new Result(true,"O'zgartirildi");
         }

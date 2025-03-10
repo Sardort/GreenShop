@@ -30,7 +30,6 @@ public class CheckService {
     public Result create(CheckDto checkDto){
         Check check = new Check();
         check.setOrder_number(checkDto.getOrder_number());
-        check.setDate(checkDto.getDate());
         check.setTotal(checkDto.getTotal());
         check.setPayment_method(checkDto.getPayment_method());
         check.setQuantity(checkDto.getQuantity());
@@ -46,7 +45,6 @@ public class CheckService {
         if (checkOptional.isPresent()){
             Check check = checkOptional.get();
             check.setOrder_number(checkDto.getOrder_number());
-            check.setDate(checkDto.getDate());
             check.setTotal(checkDto.getTotal());
             check.setPayment_method(checkDto.getPayment_method());
             check.setQuantity(checkDto.getQuantity());

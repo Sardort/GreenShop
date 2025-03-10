@@ -28,7 +28,6 @@ public class LoginService {
         Login login = new Login();
         login.setEmail(loginDto.getEmail());
         login.setPassword(loginDto.getPassword());
-        login.setCreated_date(loginDto.getCreated_date());
         loginRepository.save(login);
         return new Result(true, "Saqlandi");
     }
@@ -39,7 +38,6 @@ public class LoginService {
             Login login = loginOptional.get();
             login.setEmail(loginDto.getEmail());
             login.setPassword(loginDto.getPassword());
-            login.setCreated_date(loginDto.getCreated_date());
             loginRepository.save(login);
             return new Result(true,"O'zgartirildi");
         }

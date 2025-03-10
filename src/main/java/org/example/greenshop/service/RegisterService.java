@@ -3,6 +3,7 @@ package org.example.greenshop.service;
 import org.example.greenshop.dto.RegisterDto;
 import org.example.greenshop.model.Register;
 import org.example.greenshop.model.Result;
+import org.example.greenshop.model.entity.Status;
 import org.example.greenshop.repository.RegisterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,9 +33,8 @@ public class RegisterService {
         register.setEmail(registerDto.getEmail());
         register.setPassword(registerDto.getPassword());
         register.setRepassword(registerDto.getRepassword());
-        register.setCreated_date(registerDto.getCreated_date());
         register.setRole(registerDto.getRole());
-        register.setStatus(registerDto.getStatus());
+        register.setStatus(Status.ACTIVE);
         registerRepository.save(register);
         return new Result(true,"Saqlandi");
     }
@@ -48,9 +48,8 @@ public class RegisterService {
             register.setEmail(registerDto.getEmail());
             register.setPassword(registerDto.getPassword());
             register.setRepassword(registerDto.getRepassword());
-            register.setCreated_date(registerDto.getCreated_date());
             register.setRole(registerDto.getRole());
-            register.setStatus(registerDto.getStatus());
+            register.setStatus(Status.ACTIVE);
             registerRepository.save(register);
             return new Result(true,"O'zgartirildi");
         }

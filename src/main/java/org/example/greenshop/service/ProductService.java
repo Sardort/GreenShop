@@ -36,8 +36,7 @@ public class ProductService {
         product.setSku(productDto.getSku());
         product.setTags(productDto.getTags());
         product.setReviews(productDto.getReviews());
-        product.setCreated_date(productDto.getCreated_date());
-        product.setStatus(productDto.getStatus());
+        product.setSize(String.valueOf(SizeRole.S));
         productRepository.save(product);
         return new Result(true,"Saqlandi");
     }
@@ -53,8 +52,7 @@ public class ProductService {
             product.setSku(productDto.getSku());
             product.setTags(productDto.getTags());
             product.setReviews(productDto.getReviews());
-            product.setCreated_date(productDto.getCreated_date());
-            product.setStatus(productDto.getStatus());
+            product.setSize(String.valueOf(SizeRole.S));
             productRepository.save(product);
             return new Result(true,"O'zgartirildi");
         }
